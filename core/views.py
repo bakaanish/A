@@ -1,8 +1,11 @@
 from django.shortcuts import render, get_object_or_404
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponse, Http404
+from django.conf import settings
 from .models import Note, FlashcardDeck, Flashcard, JournalEntry, TulipVariety, ClinicalSkill, NCLEXQuestion
 import json
 import random
+import os
+from django.contrib.staticfiles import finders
 
 def home(request):
     return render(request, 'core/home.html')
