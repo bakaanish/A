@@ -26,7 +26,7 @@ def tulips(request):
                 'bloom_time': 'Early Spring',
                 'height': '12-16 inches',
                 'care_instructions': 'Plant in well-drained soil in full sun to partial shade. Water regularly during growing season.',
-                'image_url': 'https://images.pexels.com/photos/64241/pexels-photo-64241.jpeg'
+                'image_url': 'https://images.pexels.com/photos/1379636/pexels-photo-1379636.jpeg'
             },
             {
                 'name': 'Queen of Night',
@@ -36,7 +36,7 @@ def tulips(request):
                 'bloom_time': 'Late Spring',
                 'height': '18-24 inches',
                 'care_instructions': 'Prefers full sun and well-drained, fertile soil. Allow foliage to die back naturally.',
-                'image_url': 'https://images.pexels.com/photos/1166209/pexels-photo-1166209.jpeg'
+                'image_url': 'https://images.pexels.com/photos/1379644/pexels-photo-1379644.jpeg'
             },
             {
                 'name': 'White Dream',
@@ -46,7 +46,7 @@ def tulips(request):
                 'bloom_time': 'Mid Spring',
                 'height': '14-18 inches',
                 'care_instructions': 'Plant bulbs 6-8 inches deep in fall. Mulch in winter for protection in cold climates.',
-                'image_url': 'https://images.pexels.com/photos/1379636/pexels-photo-1379636.jpeg'
+                'image_url': 'https://images.pexels.com/photos/1166209/pexels-photo-1166209.jpeg'
             },
             {
                 'name': 'Pink Impression',
@@ -56,7 +56,7 @@ def tulips(request):
                 'bloom_time': 'Mid to Late Spring',
                 'height': '20-24 inches',
                 'care_instructions': 'Very hardy variety. Plant in full sun with good drainage. Fertilize in early spring.',
-                'image_url': 'https://images.pexels.com/photos/1379637/pexels-photo-1379637.jpeg'
+                'image_url': 'https://images.pexels.com/photos/64241/pexels-photo-64241.jpeg'
             },
             {
                 'name': 'Yellow Crown',
@@ -66,7 +66,7 @@ def tulips(request):
                 'bloom_time': 'Early to Mid Spring',
                 'height': '12-15 inches',
                 'care_instructions': 'Excellent for containers and rock gardens. Water well during growth period.',
-                'image_url': 'https://images.pexels.com/photos/1379644/pexels-photo-1379644.jpeg'
+                'image_url': 'https://images.pexels.com/photos/1379637/pexels-photo-1379637.jpeg'
             },
             {
                 'name': 'Purple Prince',
