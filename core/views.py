@@ -286,3 +286,232 @@ def nclex_prep(request):
 
 def nursing_curriculum(request):
     return render(request, 'core/nursing_curriculum.html')
+
+def download_notes(request, subject):
+    """Generate and download PDF notes for a specific subject"""
+    
+    # Subject content mapping
+    subject_content = {
+        'anatomy': {
+            'title': 'Human Anatomy - Complete Notes',
+            'chapters': [
+                'Introduction to Anatomy',
+                'Skeletal System',
+                'Muscular System', 
+                'Cardiovascular System',
+                'Respiratory System',
+                'Nervous System',
+                'Digestive System',
+                'Urinary System'
+            ]
+        },
+        'physiology': {
+            'title': 'Human Physiology - Complete Notes',
+            'chapters': [
+                'Cell Physiology',
+                'Cardiovascular Physiology',
+                'Respiratory Physiology',
+                'Renal Physiology',
+                'Neurophysiology',
+                'Endocrine System',
+                'Digestive Physiology',
+                'Reproductive Physiology'
+            ]
+        },
+        'biochemistry': {
+            'title': 'Biochemistry - Complete Notes',
+            'chapters': [
+                'Biomolecules',
+                'Enzymes',
+                'Carbohydrate Metabolism',
+                'Lipid Metabolism',
+                'Protein Metabolism',
+                'Nucleic Acid Metabolism',
+                'Clinical Biochemistry'
+            ]
+        },
+        'fundamentals': {
+            'title': 'Fundamentals of Nursing - Complete Notes',
+            'chapters': [
+                'Introduction to Nursing',
+                'Nursing Process',
+                'Communication',
+                'Infection Control',
+                'Vital Signs',
+                'Medication Administration',
+                'Documentation',
+                'Patient Safety'
+            ]
+        }
+    }
+    
+    if subject not in subject_content:
+        raise Http404("Subject not found")
+    
+    content = subject_content[subject]
+    
+    # Create PDF
+    buffer = io.BytesIO()
+    p = canvas.Canvas(buffer, pagesize=letter)
+    width, height = letter
+    
+    # Title page
+    p.setFont("Helvetica-Bold", 24)
+    p.drawString(100, height - 100, content['title'])
+    p.setFont("Helvetica", 16)
+    p.drawString(100, height - 140, "TU Institute of Medicine")
+    p.drawString(100, height - 160, "B.Sc. Nursing Program")
+    
+    y_position = height - 220
+    
+    # Table of contents
+    p.setFont("Helvetica-Bold", 18)
+    p.drawString(100, y_position, "Table of Contents")
+    y_position -= 40
+    
+    p.setFont("Helvetica", 12)
+    for i, chapter in enumerate(content['chapters'], 1):
+        p.drawString(120, y_position, f"{i}. {chapter}")
+        y_position -= 20
+        
+        if y_position < 100:
+            p.showPage()
+            y_position = height - 100
+    
+    # Add sample content for first chapter
+    p.showPage()
+    y_position = height - 100
+    
+    p.setFont("Helvetica-Bold", 18)
+    p.drawString(100, y_position, f"Chapter 1: {content['chapters'][0]}")
+    y_position -= 40
+    
+    p.setFont("Helvetica", 12)
+    sample_text = [
+        "This chapter covers the fundamental concepts and principles.",
+        "Key learning objectives:",
+        "• Understand basic terminology",
+        "• Identify key structures and functions", 
+        "• Apply knowledge to clinical scenarios",
+        "",
+        "For complete notes, please refer to your textbooks and",
+        "attend lectures regularly."
+    ]
+    
+    for line in sample_text:
+        p.drawString(100, y_position, line)
+        y_position -= 20
+    
+    p.save()
+    buffer.seek(0)
+    
+    response = FileResponse(
+        buffer,
+        as_attachment=True,
+        filename=f'{subject}_notes.pdf',
+        content_type='application/pdf'
+    )
+    
+    return response
+
+def download_questions(request, subject):
+    """Generate and download past questions PDF for a specific subject"""
+    
+    # Sample questions for different subjects
+    questions_data = {
+        'anatomy': {
+            'title': 'Human Anatomy - Past Questions',
+            'questions': [
+                {
+                    'year': '2079',
+                    'questions': [
+                        'Define anatomical position. List the directional terms used in anatomy. (5 marks)',
+                        'Describe the structure and functions of synovial joints. (10 marks)',
+                        'Explain the blood supply of the heart. (8 marks)',
+                        'Write short notes on: a) Nephron b) Alveoli (2×3=6 marks)'
+                    ]
+                },
+                {
+                    'year': '2078',
+                    'questions': [
+                        'Classify bones based on shape with examples. (6 marks)',
+                        'Describe the anatomy of respiratory system. (12 marks)',
+                        'Explain the structure of neuron. (7 marks)'
+                    ]
+                }
+            ]
+        },
+        'physiology': {
+            'title': 'Human Physiology - Past Questions',
+            'questions': [
+                {
+                    'year': '2079',
+                    'questions': [
+                        'Explain the mechanism of muscle contraction. (10 marks)',
+                        'Describe the cardiac cycle with diagram. (12 marks)',
+                        'Write about regulation of blood pressure. (8 marks)'
+                    ]
+                }
+            ]
+        }
+    }
+    
+    if subject not in questions_data:
+        raise Http404("Questions not found")
+    
+    content = questions_data[subject]
+    
+    # Create PDF
+    buffer = io.BytesIO()
+    p = canvas.Canvas(buffer, pagesize=letter)
+    width, height = letter
+    
+    # Title page
+    p.setFont("Helvetica-Bold", 24)
+    p.drawString(100, height - 100, content['title'])
+    p.setFont("Helvetica", 16)
+    p.drawString(100, height - 140, "TU Institute of Medicine")
+    p.drawString(100, height - 160, "Board Examination Questions")
+    
+    y_position = height - 220
+    
+    # Questions by year
+    for year_data in content['questions']:
+        p.setFont("Helvetica-Bold", 16)
+        p.drawString(100, y_position, f"Year {year_data['year']}")
+        y_position -= 30
+        
+        p.setFont("Helvetica", 12)
+        for i, question in enumerate(year_data['questions'], 1):
+            # Wrap long questions
+            words = question.split()
+            line = f"{i}. "
+            for word in words:
+                if len(line + word) > 80:
+                    p.drawString(100, y_position, line)
+                    y_position -= 15
+                    line = "   " + word + " "
+                else:
+                    line += word + " "
+            
+            if line.strip():
+                p.drawString(100, y_position, line)
+                y_position -= 25
+            
+            if y_position < 100:
+                p.showPage()
+                y_position = height - 100
+        
+        y_position -= 20
+    
+    p.save()
+    buffer.seek(0)
+    
+    response = FileResponse(
+        buffer,
+        as_attachment=True,
+        filename=f'{subject}_questions.pdf',
+        content_type='application/pdf'
+    )
+    
+    return response

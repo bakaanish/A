@@ -58,12 +58,12 @@
                         </div>
                     </div>
                     <div class="space-y-3">
-                        <button class="notes-btn w-full bg-red-500 text-white py-2 rounded-lg hover:bg-red-600 transition-colors" data-subject="anatomy">
+                        <a href="{% url 'core:download_notes' 'anatomy' %}" class="block w-full bg-red-500 text-white py-2 rounded-lg hover:bg-red-600 transition-colors text-center">
                             <i class="fas fa-book mr-2"></i>Download Notes
-                        </button>
-                        <button class="questions-btn w-full bg-red-100 text-red-700 py-2 rounded-lg hover:bg-red-200 transition-colors" data-subject="anatomy">
+                        </a>
+                        <a href="{% url 'core:download_questions' 'anatomy' %}" class="block w-full bg-red-100 text-red-700 py-2 rounded-lg hover:bg-red-200 transition-colors text-center">
                             <i class="fas fa-question-circle mr-2"></i>Past Questions
-                        </button>
+                        </a>
                     </div>
                 </div>
 
@@ -84,12 +84,12 @@
                         </div>
                     </div>
                     <div class="space-y-3">
-                        <button class="notes-btn w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 transition-colors" data-subject="physiology">
+                        <a href="{% url 'core:download_notes' 'physiology' %}" class="block w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 transition-colors text-center">
                             <i class="fas fa-book mr-2"></i>Download Notes
-                        </button>
-                        <button class="questions-btn w-full bg-blue-100 text-blue-700 py-2 rounded-lg hover:bg-blue-200 transition-colors" data-subject="physiology">
+                        </a>
+                        <a href="{% url 'core:download_questions' 'physiology' %}" class="block w-full bg-blue-100 text-blue-700 py-2 rounded-lg hover:bg-blue-200 transition-colors text-center">
                             <i class="fas fa-question-circle mr-2"></i>Past Questions
-                        </button>
+                        </a>
                     </div>
                 </div>
 
@@ -110,12 +110,12 @@
                         </div>
                     </div>
                     <div class="space-y-3">
-                        <button class="notes-btn w-full bg-green-500 text-white py-2 rounded-lg hover:bg-green-600 transition-colors" data-subject="biochemistry">
+                        <a href="{% url 'core:download_notes' 'biochemistry' %}" class="block w-full bg-green-500 text-white py-2 rounded-lg hover:bg-green-600 transition-colors text-center">
                             <i class="fas fa-book mr-2"></i>Download Notes
-                        </button>
-                        <button class="questions-btn w-full bg-green-100 text-green-700 py-2 rounded-lg hover:bg-green-200 transition-colors" data-subject="biochemistry">
+                        </a>
+                        <a href="{% url 'core:download_questions' 'biochemistry' %}" class="block w-full bg-green-100 text-green-700 py-2 rounded-lg hover:bg-green-200 transition-colors text-center">
                             <i class="fas fa-question-circle mr-2"></i>Past Questions
-                        </button>
+                        </a>
                     </div>
                 </div>
 
@@ -136,12 +136,12 @@
                         </div>
                     </div>
                     <div class="space-y-3">
-                        <button class="notes-btn w-full bg-purple-500 text-white py-2 rounded-lg hover:bg-purple-600 transition-colors" data-subject="microbiology">
+                        <a href="{% url 'core:download_notes' 'microbiology' %}" class="block w-full bg-purple-500 text-white py-2 rounded-lg hover:bg-purple-600 transition-colors text-center">
                             <i class="fas fa-book mr-2"></i>Download Notes
-                        </button>
-                        <button class="questions-btn w-full bg-purple-100 text-purple-700 py-2 rounded-lg hover:bg-purple-200 transition-colors" data-subject="microbiology">
+                        </a>
+                        <a href="{% url 'core:download_questions' 'microbiology' %}" class="block w-full bg-purple-100 text-purple-700 py-2 rounded-lg hover:bg-purple-200 transition-colors text-center">
                             <i class="fas fa-question-circle mr-2"></i>Past Questions
-                        </button>
+                        </a>
                     </div>
                 </div>
 
@@ -162,12 +162,12 @@
                         </div>
                     </div>
                     <div class="space-y-3">
-                        <button class="notes-btn w-full bg-pink-500 text-white py-2 rounded-lg hover:bg-pink-600 transition-colors" data-subject="fundamentals">
+                        <a href="{% url 'core:download_notes' 'fundamentals' %}" class="block w-full bg-pink-500 text-white py-2 rounded-lg hover:bg-pink-600 transition-colors text-center">
                             <i class="fas fa-book mr-2"></i>Download Notes
-                        </button>
-                        <button class="questions-btn w-full bg-pink-100 text-pink-700 py-2 rounded-lg hover:bg-pink-200 transition-colors" data-subject="fundamentals">
+                        </a>
+                        <a href="{% url 'core:download_questions' 'fundamentals' %}" class="block w-full bg-pink-100 text-pink-700 py-2 rounded-lg hover:bg-pink-200 transition-colors text-center">
                             <i class="fas fa-question-circle mr-2"></i>Past Questions
-                        </button>
+                        </a>
                     </div>
                 </div>
 
@@ -188,12 +188,12 @@
                         </div>
                     </div>
                     <div class="space-y-3">
-                        <button class="notes-btn w-full bg-orange-500 text-white py-2 rounded-lg hover:bg-orange-600 transition-colors" data-subject="health-assessment">
+                        <a href="{% url 'core:download_notes' 'health-assessment' %}" class="block w-full bg-orange-500 text-white py-2 rounded-lg hover:bg-orange-600 transition-colors text-center">
                             <i class="fas fa-book mr-2"></i>Download Notes
-                        </button>
-                        <button class="questions-btn w-full bg-orange-100 text-orange-700 py-2 rounded-lg hover:bg-orange-200 transition-colors" data-subject="health-assessment">
+                        </a>
+                        <a href="{% url 'core:download_questions' 'health-assessment' %}" class="block w-full bg-orange-100 text-orange-700 py-2 rounded-lg hover:bg-orange-200 transition-colors text-center">
                             <i class="fas fa-question-circle mr-2"></i>Past Questions
-                        </button>
+                        </a>
                     </div>
                 </div>
 
@@ -214,12 +214,12 @@
                         </div>
                     </div>
                     <div class="space-y-3">
-                        <button class="notes-btn w-full bg-indigo-500 text-white py-2 rounded-lg hover:bg-indigo-600 transition-colors" data-subject="psychology">
+                        <a href="{% url 'core:download_notes' 'psychology' %}" class="block w-full bg-indigo-500 text-white py-2 rounded-lg hover:bg-indigo-600 transition-colors text-center">
                             <i class="fas fa-book mr-2"></i>Download Notes
-                        </button>
-                        <button class="questions-btn w-full bg-indigo-100 text-indigo-700 py-2 rounded-lg hover:bg-indigo-200 transition-colors" data-subject="psychology">
+                        </a>
+                        <a href="{% url 'core:download_questions' 'psychology' %}" class="block w-full bg-indigo-100 text-indigo-700 py-2 rounded-lg hover:bg-indigo-200 transition-colors text-center">
                             <i class="fas fa-question-circle mr-2"></i>Past Questions
-                        </button>
+                        </a>
                     </div>
                 </div>
 
@@ -240,12 +240,12 @@
                         </div>
                     </div>
                     <div class="space-y-3">
-                        <button class="notes-btn w-full bg-gray-500 text-white py-2 rounded-lg hover:bg-gray-600 transition-colors" data-subject="english">
+                        <a href="{% url 'core:download_notes' 'english' %}" class="block w-full bg-gray-500 text-white py-2 rounded-lg hover:bg-gray-600 transition-colors text-center">
                             <i class="fas fa-book mr-2"></i>Download Notes
-                        </button>
-                        <button class="questions-btn w-full bg-gray-100 text-gray-700 py-2 rounded-lg hover:bg-gray-200 transition-colors" data-subject="english">
+                        </a>
+                        <a href="{% url 'core:download_questions' 'english' %}" class="block w-full bg-gray-100 text-gray-700 py-2 rounded-lg hover:bg-gray-200 transition-colors text-center">
                             <i class="fas fa-question-circle mr-2"></i>Past Questions
-                        </button>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -279,12 +279,12 @@
                         </div>
                     </div>
                     <div class="space-y-3">
-                        <button class="notes-btn w-full bg-red-500 text-white py-2 rounded-lg hover:bg-red-600 transition-colors" data-subject="pathophysiology">
+                        <a href="{% url 'core:download_notes' 'pathophysiology' %}" class="block w-full bg-red-500 text-white py-2 rounded-lg hover:bg-red-600 transition-colors text-center">
                             <i class="fas fa-book mr-2"></i>Download Notes
-                        </button>
-                        <button class="questions-btn w-full bg-red-100 text-red-700 py-2 rounded-lg hover:bg-red-200 transition-colors" data-subject="pathophysiology">
+                        </a>
+                        <a href="{% url 'core:download_questions' 'pathophysiology' %}" class="block w-full bg-red-100 text-red-700 py-2 rounded-lg hover:bg-red-200 transition-colors text-center">
                             <i class="fas fa-question-circle mr-2"></i>Past Questions
-                        </button>
+                        </a>
                     </div>
                 </div>
 
@@ -306,12 +306,12 @@
                         </div>
                     </div>
                     <div class="space-y-3">
-                        <button class="notes-btn w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 transition-colors" data-subject="pharmacology">
+                        <a href="{% url 'core:download_notes' 'pharmacology' %}" class="block w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 transition-colors text-center">
                             <i class="fas fa-book mr-2"></i>Download Notes
-                        </button>
-                        <button class="questions-btn w-full bg-blue-100 text-blue-700 py-2 rounded-lg hover:bg-blue-200 transition-colors" data-subject="pharmacology">
+                        </a>
+                        <a href="{% url 'core:download_questions' 'pharmacology' %}" class="block w-full bg-blue-100 text-blue-700 py-2 rounded-lg hover:bg-blue-200 transition-colors text-center">
                             <i class="fas fa-question-circle mr-2"></i>Past Questions
-                        </button>
+                        </a>
                     </div>
                 </div>
 

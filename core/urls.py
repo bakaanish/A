@@ -16,4 +16,6 @@ urlpatterns = [
     path('clinical-skills/', views.clinical_skills, name='clinical_skills'),
     path('nclex-prep/', views.nclex_prep, name='nclex_prep'),
     path('nursing-curriculum/', views.nursing_curriculum, name='nursing_curriculum'),
+    path('download-notes/<str:subject>/', views.download_notes, name='download_notes'),
+    path('download-questions/<str:subject>/', views.download_questions, name='download_questions'),
 ]
