@@ -384,27 +384,27 @@
                 <i class="fas fa-file-pdf text-4xl text-red-500 mb-4"></i>
                 <h3 class="text-xl font-bold text-gray-800 mb-2">Complete Syllabus PDF</h3>
                 <p class="text-gray-600 mb-4">Official TU IOM curriculum document</p>
-                <button class="bg-red-500 text-white px-6 py-2 rounded-lg hover:bg-red-600 transition-colors">
+                <a href="{% url 'core:download_notes' 'complete-syllabus' %}" class="bg-red-500 text-white px-6 py-2 rounded-lg hover:bg-red-600 transition-colors">
                     Download PDF
-                </button>
+                </a>
             </div>
             
             <div class="bg-white rounded-2xl p-6 text-center">
                 <i class="fas fa-users text-4xl text-blue-500 mb-4"></i>
                 <h3 class="text-xl font-bold text-gray-800 mb-2">Study Groups</h3>
                 <p class="text-gray-600 mb-4">Join Facebook groups for resources</p>
-                <button class="bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600 transition-colors">
+                <a href="https://www.facebook.com/groups/bscnursing1year" target="_blank" class="bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600 transition-colors">
                     Join Groups
-                </button>
+                </a>
             </div>
             
             <div class="bg-white rounded-2xl p-6 text-center">
                 <i class="fas fa-question-circle text-4xl text-green-500 mb-4"></i>
                 <h3 class="text-xl font-bold text-gray-800 mb-2">Question Banks</h3>
                 <p class="text-gray-600 mb-4">MCQs and past exam papers</p>
-                <button class="bg-green-500 text-white px-6 py-2 rounded-lg hover:bg-green-600 transition-colors">
+                <a href="{% url 'core:download_questions' 'question-bank' %}" class="bg-green-500 text-white px-6 py-2 rounded-lg hover:bg-green-600 transition-colors">
                     Access Banks
-                </button>
+                </a>
             </div>
         </div>
     </div>
