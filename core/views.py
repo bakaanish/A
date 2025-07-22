@@ -280,3 +280,6 @@ def nclex_prep(request):
     # Select random questions for practice
     practice_questions = random.sample(list(questions), min(10, len(questions)))
     return render(request, 'core/nclex_prep.html', {'questions': practice_questions})
+
+def nursing_curriculum(request):
+    return render(request, 'core/nursing_curriculum.html')

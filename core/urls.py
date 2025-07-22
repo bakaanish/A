@@ -15,4 +15,5 @@ urlpatterns = [
     path('flashcards/', views.flashcards, name='flashcards'),
     path('clinical-skills/', views.clinical_skills, name='clinical_skills'),
     path('nclex-prep/', views.nclex_prep, name='nclex_prep'),
+    path('nursing-curriculum/', views.nursing_curriculum, name='nursing_curriculum'),
 ]
